@@ -113,14 +113,17 @@ Comprehensive footer with links, social media, and contact information
 
 ### GitHub Actions Setup
 
-The project includes GitHub Actions workflow (`.github/workflows/deploy.yml`) for automated build and deployment:
+The project includes two GitHub Actions workflows:
 
-#### CI/CD Pipeline Jobs:
+#### 1. GitHub Pages Deployment (`.github/workflows/deploy.yml`)
+For static hosting:
+
+**CI/CD Pipeline Jobs:**
 1. **Build** - Install dependencies, run linting, and build for production
 2. **Test** - Run linting and tests on every PR and push
 3. **Deploy** - Automatically deploy to GitHub Pages on push to main branch
 
-### Setup Instructions:
+**Setup Instructions:**
 
 1. Push your code to GitHub:
 ```bash
@@ -134,23 +137,36 @@ git push -u origin main
    - Select `gh-pages` branch and `/ (root)` folder
    - Click Save
 
-3. Verify GitHub Actions is enabled:
-   - Go to Settings → Actions → General
-   - Ensure "Allow all actions and reusable workflows" is selected
+3. Your site will be available at: `https://<your-username>.github.io/frontendproject/`
 
-4. The workflow will automatically:
-   - Run tests on every push and pull request
-   - Build the project on main branch
-   - Deploy to GitHub Pages
+#### 2. Azure App Service Deployment (`.github/workflows/azure-deploy.yml`)
+For production hosting with more features:
 
-5. Your site will be available at: `https://<your-username>.github.io/frontendproject/`
+**Features:**
+- Dynamic scaling and management
+- Custom domains with SSL
+- Environment variables and secrets
+- Advanced monitoring and diagnostics
+- 99.95% SLA uptime guarantee
 
-#### Optional: Custom Domain
+**Setup Instructions:**
 
-To use a custom domain, edit `.github/workflows/deploy.yml` and add your domain to the `cname` field:
-```yaml
-cname: yourdomain.com
+See [AZURE_DEPLOYMENT.md](AZURE_DEPLOYMENT.md) for complete Azure deployment guide.
+
+Quick start:
+```bash
+# 1. Create Azure resources
+az login
+az group create --name techcool-rg --location eastus
+az webapp create --name techcool-app --resource-group techcool-rg --plan techcool-plan
+
+# 2. Add AZURE_CREDENTIALS secret to GitHub Secrets
+
+# 3. Push to trigger deployment
+git push origin main
 ```
+
+Your app will be available at: `https://techcool-app.azurewebsites.net`
 
 ## Building for Production
 
