@@ -1,0 +1,15 @@
+.app {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--primary-dark);
+}
+
+section {
+  padding: 4rem 2rem;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 2rem 1rem;
+  }
+}
