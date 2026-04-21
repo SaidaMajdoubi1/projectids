@@ -1,5 +1,5 @@
 .testimonials {
-  background-color: var(--secondary-dark);
+  background: linear-gradient(135deg, #1a1f3a 0%, #0a0e27 100%);
   padding: 4rem 2rem;
 }
 
@@ -16,17 +16,19 @@
 }
 
 .testimonial-card {
-  background: linear-gradient(135deg, rgba(45, 122, 138, 0.15), rgba(45, 122, 138, 0.05));
+  background: linear-gradient(135deg, rgba(236, 72, 153, 0.1), rgba(124, 58, 237, 0.05));
   padding: 2rem;
-  border-radius: 1rem;
-  border: 1px solid rgba(45, 122, 138, 0.2);
+  border-radius: 1.25rem;
+  border: 1px solid rgba(236, 72, 153, 0.2);
   transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
 }
 
 .testimonial-card:hover {
-  border-color: var(--accent-teal);
+  border-color: var(--accent-pink);
   transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(45, 122, 138, 0.2);
+  box-shadow: 0 15px 40px rgba(236, 72, 153, 0.2);
+  background: linear-gradient(135deg, rgba(236, 72, 153, 0.15), rgba(59, 130, 246, 0.1));
 }
 
 .testimonial-header {
@@ -46,8 +48,12 @@
 }
 
 .role {
-  color: var(--accent-teal);
+  background: var(--gradient-blue-cyan);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   font-size: 0.9rem;
+  font-weight: 600;
 }
 
 .testimonial-text {

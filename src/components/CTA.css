@@ -1,5 +1,5 @@
 .cta {
-  background: linear-gradient(135deg, rgba(45, 122, 138, 0.2) 0%, rgba(255, 77, 77, 0.1) 100%);
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.15) 0%, rgba(236, 72, 153, 0.1) 50%, rgba(59, 130, 246, 0.1) 100%);
   padding: 4rem 2rem;
   text-align: center;
 }
@@ -12,6 +12,10 @@
 .cta-container h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
+  background: var(--gradient-purple-pink);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .cta-container p {
